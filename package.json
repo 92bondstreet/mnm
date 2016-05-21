@@ -8,6 +8,7 @@
     "node": ">=4"
   },
   "scripts": {
+    "lint": "./node_modules/.bin/eslint **.js",
     "test-only": "ava --tap | tap-diff",
     "test": "./node_modules/.bin/nyc --check-coverage --lines 80 --functions 80 --branches 80 npm run test-only; ./node_modules/.bin/nyc report --reporter=html",
     "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
@@ -21,9 +22,11 @@
   },
   "devDependencies": {
     "ava": "^0.14.0",
-    "babel-eslint": "^6.0.4",
     "coveralls": "^2.11.9",
-    "nyc": "^6.4.3",
+    "eslint": "^2.10.2",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-plugin-import": "^1.8.0",
+    "nyc": "^6.4.4",
     "opn-cli": "^3.1.0",
     "tap-diff": "^0.1.1"
   },
